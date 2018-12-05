@@ -1,7 +1,5 @@
-p←⊃⊃⎕NGET'p5.txt'1
-lcase←819⌶
-b←⌽¨a←⎕A,¨lcase ⎕A
-f←{⍵/⍨(⊢⍱¯1⌽⊢)⊃∨/⍺⍷¨⊂⍵}
-g←(a∘f b∘f)⍣≡
+p←⎕UCS⊃⊃⎕NGET'p5.txt'1
+f←{⍵/⍨{(⍵,0)⍱0,⍵}⍺=2-/⍵}
+g←(32∘f ¯32∘f)⍣≡
 ≢q←g p ⍝ part 1
-⌊/{≢g q~⍵,lcase ⍵}¨⎕A ⍝ part 2
+⌊/{≢g q~⍵,32+⍵}¨⎕UCS ⎕A ⍝ part 2
