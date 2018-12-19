@@ -4,22 +4,22 @@ p←⊃⎕NGET'p16.txt'1
 an←{2⊥∧/(2/⍨⌈2⍟1+⍺⌈⍵)⊤⍺⍵}
 or←{2⊥∨/(2/⍨⌈2⍟1+⍺⌈⍵)⊤⍺⍵}
 
-addr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)+(b⊃w)⊣w←⍵}
-addi←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)+b⊣w←⍵}
-mulr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)×(b⊃w)⊣w←⍵}
-muli←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)×b⊣w←⍵}
-banr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)an(b⊃w)⊣w←⍵}
-bani←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)an b⊣w←⍵}
-borr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)or(b⊃w)⊣w←⍵}
-bori←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)or b⊣w←⍵}
-setr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)⊣w←⍵}
-seti←{_ a b c←⍺ ⋄ w⊣(c⊃w)←a⊣w←⍵}
-gtir←{_ a b c←⍺ ⋄ w⊣(c⊃w)←a>(b⊃w)⊣w←⍵}
-gtrr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)>(b⊃w)⊣w←⍵}
-gtri←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)>b⊣w←⍵}
-eqir←{_ a b c←⍺ ⋄ w⊣(c⊃w)←a=(b⊃w)⊣w←⍵}
-eqrr←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)=(b⊃w)⊣w←⍵}
-eqri←{_ a b c←⍺ ⋄ w⊣(c⊃w)←(a⊃w)=b⊣w←⍵}
+addr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]+r[b]⊣r←⍵}
+addi←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]+b⊣r←⍵}
+mulr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]×r[b]⊣r←⍵}
+muli←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]×b⊣r←⍵}
+banr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]an r[b]⊣r←⍵}
+bani←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]an b⊣r←⍵}
+borr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]or r[b]⊣r←⍵}
+bori←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]or b⊣r←⍵}
+setr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]⊣r←⍵}
+seti←{_ a b c←⍺ ⋄ r⊣r[c]←a⊣r←⍵}
+gtir←{_ a b c←⍺ ⋄ r⊣r[c]←a>r[b]⊣r←⍵}
+gtrr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]>r[b]⊣r←⍵}
+gtri←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]>b⊣r←⍵}
+eqir←{_ a b c←⍺ ⋄ r⊣r[c]←a=r[b]⊣r←⍵}
+eqrr←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]=r[b]⊣r←⍵}
+eqri←{_ a b c←⍺ ⋄ r⊣r[c]←r[a]=b⊣r←⍵}
 
 all←{16 4⍴⍺(addr,addi,mulr,muli,banr,bani,borr,bori,setr,seti,gtir,gtrr,gtri,eqir,eqrr,eqri)⍵}
 
