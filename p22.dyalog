@@ -1,10 +1,9 @@
 ⎕IO←0
 p←⍎¨¨'\d+'⎕S'&'¨⊃⎕NGET'p22.txt'1
 depth←⊃⊃p ⋄ target←⊃⌽p
-el←20183|depth+⊢
-gi←{⍵≡0 0:0 ⋄ ⍵≡target:0 ⋄ 0∊⍵:16807 48271+.×⍵ ⋄ (el g[⊂⍵-0 1])×el g[⊂⍵-1 0]}
-g←0⍴⍨⌈7×target ⋄ {g[⊂⍵]←gi ⍵}¨⍳⍴g
-t←3|el g ⍝ type
+f←{⍵≡target:0 ⋄ 0∊⍵:16807 48271+.×⍵ ⋄ e[⊂⍵-0 1]×e[⊂⍵-1 0]}
+e←0⍴⍨⌈7×target ⋄ {e[⊂⍵]←20183|depth+f ⍵}¨⍳⍴e
+t←3|e ⍝ type
 +/,t↑⍨1+target ⍝ part 1
 
 m←0@(⊂0 0 1)⊢1E6⍴⍨3,⍨⍴t ⍝ last axis: 0=neither, 1=torch, 2=climbing gear
